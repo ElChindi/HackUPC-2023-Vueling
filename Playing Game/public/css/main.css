@@ -1,0 +1,341 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background-color: #F0F8FF;
+  background: linear-gradient(45deg, #87CEFA, #00BFFF);
+}
+
+#sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87CEFA, #1E90FF);
+  z-index: -1;
+}
+
+
+/*CLOUDS*/
+#clouds {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  animation: moveClouds 30s linear infinite;
+}
+
+#cloud1, #cloud2, #cloud3 {
+  position: absolute;
+  top: 10%;
+  opacity: 0.8;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+}
+
+#cloud1 {
+  left: 10%;
+}
+
+#cloud2 {
+  left: 50%;
+}
+
+#cloud3 {
+  right: 10%;
+}
+
+@keyframes moveClouds {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+
+/* LOGIN */
+#loginContainer {
+  min-width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border: 1px solid black;
+}
+
+h1 {
+  margin-top: 0;
+  /* color: #1E90FF; */
+  /* color: #00BFFF; */
+  color: #ffd700;
+  
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5
+}
+
+
+
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    /* color: #00BFFF; */
+    color: #000000;
+    display: block;
+    margin: 10px 0 5px 0;
+    margin-bottom: 10px;
+}
+
+input[type=text], input[type=password] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+button[type=submit] {
+    /* background-color: #00BFFF;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     */
+    
+    background-color: #ffd700;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+button[type=submit]:hover {
+    background-color: #87CEEB;
+}
+
+.clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.cloud1, .cloud2, .cloud3 {
+    position: absolute;
+    background-image: url("https://res.cloudinary.com/dmzvowanh/image/upload/v1628827349/cloud1_xcb3i9.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 3s linear;
+}
+
+.cloud1 {
+    top: 5%;
+    left: 10%;
+    width: 15%;
+    height: 10%;
+    animation: cloud1move 30s linear infinite;
+}
+
+.cloud2 {
+    top: 20%;
+    left: 70%;
+    width: 10%;
+    height: 8%;
+    animation: cloud2move 50s linear infinite;
+}
+
+.cloud3 {
+    top: 50%;
+    left: 30%;
+    width: 20%;
+    height: 15%;
+    animation: cloud3move 40s linear infinite;
+}
+
+.cloud1:hover, .cloud2:hover, .cloud3:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes cloud1move {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes cloud2move {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes cloud3move {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+}
+
+
+
+
+
+
+
+
+
+
+#header.global_header {
+  background: #4D4D4D;
+}
+
+
+
+#gameContainer, #chatContainer {
+  display: inline-block;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#startGameBtn {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+#gameContainer {
+  width: 80%;
+  height: 70vh;
+  background-image: url('game-background.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 5px solid white;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chatContainer {
+  position: relative;
+  padding: 10px;
+  width: 30%;
+  height: 70vh;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#messageInsert {
+  position: absolute;
+  bottom: 0;
+}
+
+#messages{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+#messsageInput {
+  padding-top: 10px;
+}
+
+#chat {
+  bottom: 0;
+  /* position: absolute; */
+}
+
+.chat-header {
+  background-color: #00BFFF;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.chat-messages {
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+}
+
+.chat-username {
+  font-weight: bold;
+}
+
+.chat-text {
+  margin-left: 5px;
+}
+
+.chat-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.chat-input button {
+  background-color: #00BFFF;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #87CEFA;
+}
+
